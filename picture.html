@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Descrição Responsiva E-Commerce - Crie uma descrição HTML responsiva que se adapta ao dispositivo usado">
+    <meta name="author" content="Douglas Carlos">
+    <title>Descrição Responsiva E-Commerce | &lt;picture&gt;</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta property="og:description" content="Descrição Responsiva E-Commerce - &lt;picture&gt;"/>
+</head>
+<body>
+    <div class="mx-auto text-center col-md-8 order-md-1">
+        <br>
+        <h2>Descrição Responsiva E-Commerce</h2>
+        <h5>Crie uma descrição HTML responsiva que se adapta ao dispositivo usado</h5>
+        <br>
+        <h4>Usando o elemento <code>&lt;picture&gt;</code>.</h4>
+        <br>
+
+
+    <div class="card">
+        <div class="card-body">
+          <form name="yourform">
+            <div class="form-row">
+              <div class="form-group col-md-9">
+                  <label for="inputUsuario">Endereço da imagem Mobile</label>
+                  <input type="text" class="form-control" id="endereco_img_mobile" value="https://www.site.br.dev/images/descricao/produto_568_id_01_mobile.png">
+              </div>
+              <div class="form-group col-md-3">
+                  <label for="inputSenha">Tamanho maximo da tela Mobile</label>
+                  <input type="text" class="form-control" id="tamanho_mobile" value="599" maxlength="4">
+              </div>
+              <div class="form-group col-md-9">
+                <label for="inputUsuario">Endereço da imagem Destop</label>
+                <input type="text" class="form-control" id="endereco_img_desktop" value="https://www.site.br.dev/images/descricao/produto_568_id_01_desktop.png">
+            </div>
+            <div class="form-group col-md-3">
+                <label for="inputSenha">Tamanho minimo da tela Desktop</label>
+                <input type="text" class="form-control" id="tamanho_desktop" value="600" maxlength="4">
+            </div>
+            </div>
+            
+            <br><br>
+            <div class="form-group">
+                Código<br>
+            </div>
+            <div class="form-group">
+                <textarea class="form-control" id="text1" data-current="true" name="text1" rows="10"></textarea>
+            </div>
+            <input type="button" class="btn btn-primary" value="Adicionar" onClick="onClick()"/>
+            <div class="form-group">
+                <br><p>Visualização</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="form-group">
+        <br><a id="img"></a>
+    </div>
+      <script type="text/javascript">
+var clicks = 0;
+
+function onClick() {
+  clicks += 1;
+  const input_endereco_img_tela_mobile = document.getElementById('endereco_img_mobile').value;
+  const input_endereco_img_tela_desktop = document.getElementById('endereco_img_desktop').value;
+  const input_tamanho_tela_mobile = document.getElementById('tamanho_mobile').value;
+  const input_tamanho_tela_desktop = document.getElementById('tamanho_desktop').value;
+  valor1 = '<picture>\n\
+';
+  valor2 = '    <source media=\"(max-width: ' + input_tamanho_tela_mobile + 'px)\" srcset=\"' + input_endereco_img_tela_mobile + '\">\n\
+';
+  valor3 = '    <source media=\"(min-width: ' + input_tamanho_tela_desktop + 'px)\" srcset=\"' + input_endereco_img_tela_desktop + '\">\n\
+';
+  valor4 = '    <img src=\"Desktop_images/BannerProduto-ElectraPopAquarela_01.webp\" alt=\"Banner ' + clicks + '\" style=\"margin-top:calc(-5px);display:block;margin:0 auto;\">\n\
+'
+  valor5 = '</picture>\n\
+';
+  document.forms['yourform']['text1'].value += valor1 + valor2 + valor3 + valor4 + valor5;
+  document.getElementById("img").innerHTML += valor1 + valor2 + valor3 + valor4 + valor5;
+};
+    </script>      
+
+    </div>
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted text-center">© 2022 - Uberaba.MG - Projetado e construído por <a href="https://github.com/douglascarlos-dev" target="_blank">Douglas Carlos</a>.</small>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="js/jquery-3.2.1.slim.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
