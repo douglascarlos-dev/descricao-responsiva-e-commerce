@@ -13,7 +13,7 @@
 <body>
     <div class="mx-auto text-center col-md-8 order-md-1">
         <br>
-        <h2>Descrição Responsiva E-Commerce</h2>
+        <h2><a href="index.html">&larr;</a> Descrição Responsiva E-Commerce</h2>
         <h5>Crie uma descrição HTML responsiva que se adapta ao dispositivo usado</h5>
         <br>
         <h4>Usando o elemento <code>&lt;picture&gt;</code>.</h4>
@@ -51,7 +51,7 @@
             </div>
             <input type="button" class="btn btn-primary" value="Adicionar" onClick="onClick()"/>
             <div class="form-group">
-                <br><p>Visualização</p>
+                <br><input type="button" class="btn btn-success" value="Visualização" onClick="recarregarVisualizacao()"/>
             </div>
           </form>
         </div>
@@ -81,6 +81,10 @@ function onClick() {
   document.forms['yourform']['text1'].value += valor1 + valor2 + valor3 + valor4 + valor5;
   document.getElementById("img").innerHTML += valor1 + valor2 + valor3 + valor4 + valor5;
 };
+function recarregarVisualizacao() {
+const conteudo_textarea = document.forms['yourform']['text1'].value;
+document.getElementById("img").innerHTML = conteudo_textarea;
+}
     </script>      
 
     </div>
